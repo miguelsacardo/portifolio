@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segunda lista de exercicios</title>
+</head>
+<body>
+    <p>Teste o formulario depois que todos os exercicios terminarem de aparecer na tela!</p>
+
+    <form action="">
+        <p>
+            <label for="id_name">Nome:</label>
+            <input type="text" name="name" id="id_name">
+        </p>
+
+        <p>
+            <label for="id_address">Endereco:</label>
+            <input type="text" name="address" id="id_address">
+        </p>
+
+        <p>
+            <label for="">Sexo:</label>
+            <p>
+                <label for="sex_m">Masculino:</label>
+                <input type="radio" name="sex" id="id_sex_m" value="m">
+
+                <label for="sex_f">Feminino:</label>
+                <input type="radio" name="sex" id="id_sex_f" value="f">
+            </p>
+        </p>
+
+        <p>
+            <label for="id_tel">Telefone:</label>
+            <input type="text" name="tel" id="id_tel">
+        </p>
+
+        <p>
+            <label for="id_cel">Celular:</label>
+            <input type="text" name="cel" id="id_cel">
+        </p>
+
+        <p>
+            <label for="id_email">Email:</label>
+            <input type="text" name="email" id="id_email">
+        </p>
+
+        <button type="submit" onclick="checkForm()">Enviar formulario</button>
+        
+    </form>
+    <script>
+
+        // Faça um formulário de cadastro, 
+        // Onde nenhum dos campos pode estar vazio no momento em que selecionado um botão 
+        // “Enviar”, Caso isso aconteça deve ser exibido um alert na tela informando o campo vazio. 
+        function checkForm(){
+
+            event.preventDefault()
+
+            // pegando os elementos
+            const name = document.getElementById("id_name").value
+            const address = document.getElementById("id_address").value
+            const tel = document.getElementById("id_tel").value
+            const cel = document.getElementById("id_cel").value
+            const email = document.getElementById("id_email").value
+
+            if(name === "") window.alert("O campo nome esta vazio! Por favor informe um valor!");
+            if(address === "") window.alert("O campo endereco esta vazio! Por favor informe um valor!");
+
+            if(document.getElementById("id_sex_m").checked || document.getElementById("id_sex_f").checked){
+                const sex = document.querySelector("input[name='sex']:checked").value
+            }else{
+                
+                window.alert("O campo sexo esta vazio! Por favor informe um valor!");
+            }
+
+            if(tel === "") window.alert("O campo telefone esta vazio! Por favor informe um valor!");
+            if(cel === "") window.alert("O campo celular esta vazio! Por favor informe um valor!");
+            if(email === "") window.alert("O campo email esta vazio! Por favor informe um valor!");
+
+        }
+
+        // separar exercicios
+        document.write("<br/>")
+        
+        // Faça uma calculadora usando o conceito de Arrow Function
+        // criacao das funcoes
+        const somar = (v1, v2) => v1 + v2
+        const subtrair = (v1, v2) => v1 - v2
+        const dividir = (v1, v2) => v1 / v2
+        const multiplicar = (v1, v2) => v1 * v2
+
+        // executando o exercicio
+        window.alert("Calculadora usando arrow function!")
+        let num1 = Number(window.prompt("Informe o primeiro numero!"))
+        let num2 = Number(window.prompt("Informe o segundo numero!"))
+        let operation = window.prompt("Informe uma operacao: [+]Somar\n[-]Subtrair\n[/]Dividir\n[*]Multiplicar")
+
+        switch(operation){
+            case "+":
+                document.write(`O resultado da soma dos dois numeros e ${somar(num1,num2)}`)
+                break;
+            case "-":
+                document.write(`O resultado da subtracao dos dois numeros e ${subtrair(num1,num2)}`)
+                break;
+            case "/":
+                document.write(`O resultado da divisao dos dois numeros e ${dividir(num1,num2)}`)
+                break;
+            case "*":
+                document.write(`O resultado da multiplicacao dos dois numeros e ${multiplicar(num1, num2)}`)
+                break;
+            default:
+                document.alert("Informe uma operacao valida!")
+                break;
+        }
+
+        // separar exercicios
+        document.write("<br/>")
+
+        // Inverta uma string informada pelo usuário
+        window.alert("Invertendo string fornecida pelo usuario!")
+
+        // pedindo string ao usuario
+        const palavra_usuario = window.prompt("Informe uma palavra!")
+
+        for(let i = palavra_usuario.length - 1; i >= 0; i--){
+            document.write(palavra_usuario[i])  
+        }
+
+        // separar exercicios
+        document.write("<br/>")
+
+        // Pedir um nome e imprimir cada letra separadamente.
+        window.alert("Pedir um nome e imprimir cada letra separadamente!")
+
+        // pedindo o nome
+        const nome = window.prompt("Informe um nome!")
+        for(let i = 0; i < nome.length; i++){
+            document.write(`${nome[i]}<br/>`)
+        }
+
+
+        // Pedir uma idade e dizer se a pessoa pode tirar carteira de motorista.
+        window.alert("Pedir uma idade e dizer se a pessoa pode tirar carteira de motorista!")
+
+        //pedindo a idade
+        const idade = Number(window.prompt("Informe sua idade!"))
+
+        // verificando se a pessoa pode tirar ou nao a carteira de motorista
+        if(idade >= 18){
+            window.alert("Parabens, voce pode tirar sua carteira de motorista!")
+        }else{
+            window.alert("Voce nao pode tirar a carteira de motorista!")
+        }
+
+        // separar exercicios
+        document.write("<br/>")
+
+        //Criar um programa que peça três números e exiba-os em ordem crescente.
+        window.alert("Criar um programa que peça três números e exiba-os em ordem crescente!")
+        let numero_maior = null;
+        let numero_menor = null;
+        let numero_meio = null;
+        // pedindo os numeros
+        let i = 1;
+        while(i <= 3){
+            let numeros = Number(window.prompt("Informe o numero!"))
+
+            if(numero_maior == null && numero_meio == null && numero_menor == null){
+                numero_maior = numeros
+                numero_menor = numeros
+                numero_meio = numeros
+            }
+            if(numeros > numero_maior){
+                numero_maior = numeros
+            }
+            if(numeros < numero_menor){
+                numero_menor = numeros
+            }
+            if(numeros < numero_maior && numeros > numero_menor){
+                numero_meio = numeros
+            }
+            
+            i++;
+        }
+
+        document.write(`${numero_menor},${numero_meio},${numero_maior}`)
+
+        // separar exercicios
+        document.write("<br/>")
+
+        // Criar um programa que converta horas para minutos.
+        const converterHorasParaMinutos = (valor_horario) => valor_horario * 60
+
+        window.alert("Criar um programa que converta horas para minutos")
+
+        // pedindo a hora para o usuario
+        let hora = Number(window.prompt("Informe uma hora!"))
+
+        document.write(`O valor da hora convertida para minutos e ${converterHorasParaMinutos(hora)}`)
+
+        // separar exercicios
+        document.write("<br/>")
+
+        // Criar um programa que peça um valor e exiba quantas 
+        // cédulas de R$200, R$100, R$50, R$20, R$10, R$5 e R$1 seriam necessárias para formar esse valor.
+        window.alert("Criar um programa que peça um valor e exiba quantas cédulas de R$200, R$100, R$50, R$20, R$10, R$5 e R$1 seriam necessárias para formar esse valor.")
+
+        // vetor com as cedulas que serao calculadas
+        const notas = [100, 50, 20, 10, 5, 1]
+
+        // pedindo valor ao usuario
+        let valor = parseInt(window.prompt("Informe um valor!"))
+        document.write(valor)
+
+        for(let nota of notas){
+            let quantidade_notas = parseInt(valor / nota)
+            document.write(`<br/>${quantidade_notas} nota(s) de R$ ${nota},00`) 
+            valor = valor % nota
+        }
+
+        // separar exercicios
+        document.write("<br/>")
+
+        // Criar um programa que peça um número e exiba sua raiz quadrada.
+        window.alert("Criar um programa que peça um número e exiba sua raiz quadrada.")
+
+        // pedir numero ao usuario
+        let numero_raiz_quadrada = Number(window.prompt("Informe um numero!"))
+
+        // for que ira verificar qual numero elevado a 2 vai resultar na raiz quadrada
+        for(let i = 0; i * i <= numero_raiz_quadrada; i++){
+            if(i * i === numero_raiz_quadrada) document.write(`A raiz quadrada do numero ${numero_raiz_quadrada} e ${i}`)
+            
+        }
+
+        // separar exercicios
+        document.write("<br/>")
+
+        //  Calcular Imposto de Renda (Faixas): Calcule o imposto de renda com base em faixas salariais com arrow function. 
+        // arrow function
+        const imposto_de_renda = (salario, aliquota_inss, aliquota) => {
+            return (salario - (salario * (100-aliquota_inss)/100)) * aliquota
+        }
+        window.alert("Calcular Imposto de Renda (Faixas): Calcule o imposto de renda com base em faixas salariais com arrow function.")
+
+        // pedindo o salario do usuario
+        let salario = Number(window.prompt("Informe o seu salario!"))
+
+        // pedindo a aliquota do inss ao usuario
+        let aliquota_inss = Number(window.prompt("Informe a aliquota do inss (em %)"))
+
+        // aliquota vigente
+        let aliquota = Number(window.prompt("Informe a aliquota vigente (em %)"))/100
+
+        if(salario <= 1903.98){
+            window.alert("Voce esta isento do imposto de renda!")
+        }else{
+            document.write(imposto_de_renda(salario, aliquota_inss, aliquota).toFixed(2))
+        }
+
+        // separar exercicios
+        document.write("<br/>")
+
+        // Calcular INSS: Calcule o valor do INSS (contribuição 
+        // para a previdência social) com base em uma alíquota e um salário arrow function.
+        const calcula_inss = (salario_usuario, aliquota_inss_usuario, parcela_deducao) => {
+            return salario_usuario * aliquota_inss_usuario - parcela_deducao
+        }
+        window.alert("Calcular INSS: Calcule o valor do INSS (contribuição para a previdência social) com base em uma alíquota e um salário arrow function.")
+
+        // pedindo o salario do usuario
+        let salario_usuario = Number(window.prompt("Informe o seu salario!"))
+
+        // aliquota do inss
+        let aliquota_inss_usuario = Number(window.prompt("Informe a aliquota do inss! (em %)"))/100
+
+        // parcela a deduzir
+        let parcela_deducao = Number(window.prompt("Informe a parcela a deduzir da sua faixa salarial!"))
+
+        document.write(`O valor do seu INSS e ${calcula_inss(salario_usuario, aliquota_inss_usuario, parcela_deducao)}`)
+
+        // separar exercicios
+        document.write("<br/>")
+
+        // Calcular Juros Compostos: Calcule o valor dos juros compostos sobre um capital inicial.
+        const juros_compostos = (capital, taxa_juros_anual, tempo_investimento) =>{
+            return capital * (1 + taxa_juros_anual) ** tempo_investimento
+        }
+        window.alert("Calcular Juros Compostos: Calcule o valor dos juros compostos sobre um capital inicial.")
+
+        // pedindo capital do usuario
+        let capital = Number(window.prompt("Informe o capital que sera investido!"))
+
+        // taxa de juros anual
+        let taxa_juros_anual = Number(window.prompt("Informe a taxa de juros anual (em %)"))/100
+
+        // tempo de investimento
+        let tempo_investimento = Number(window.prompt("Quantos anos voce deixara seu capital investido?"))
+
+        document.write(`Seu capital ${capital}, investido num periodo de ${tempo_investimento} ano(s) com uma taxa de juros anual de ${taxa_juros_anual} sera um montante de ${juros_compostos(capital, taxa_juros_anual, tempo_investimento).toFixed(2)}`)
+
+        // separar exercicios
+        document.write("<br/>")
+
+        // Simular Financiamento: Calcule o valor das parcelas de um financiamento (use uma fórmula simplificada).
+        const simular_financiamento = (valor_principal, taxa_juros, numero_parcelas) =>{
+            return (valor_principal * taxa_juros * (1 + taxa_juros) ** numero_parcelas) / ((1 + taxa_juros)**numero_parcelas - 1)
+        }
+        window.alert("Simular Financiamento: Calcule o valor das parcelas de um financiamento (use uma fórmula simplificada).")
+        
+        // pedindo o valor total do emprestimo
+        let valor_principal = Number(window.prompt("Informe o valor total do emprestimo!"))
+
+        // taxa de juros
+        let taxa_juros = Number(window.prompt("Informe a taxa de juros (em %)")) /100
+
+        // numero de parcelas
+        let numero_parcelas = Number(window.prompt("Informe a quantidade de parcelas que serao feitas!"))
+
+        document.write(`Valor da parcela: R$${simular_financiamento(valor_principal, taxa_juros, numero_parcelas).toFixed(2)}`)
+
+
+    </script>
+</body>
+</html>

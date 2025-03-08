@@ -117,7 +117,7 @@ a {
 
 .frontend-exercises .container .classes{
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: center;
 
     column-gap: 3.125rem ;
