@@ -141,8 +141,10 @@ a {
 }
 
 
-/* text content 
-This part is for all classes that are only theoretical content */
+/* FERNANDA CLASSES! 
+text content 
+This part is for all classes that are only theoretical content 
+*/
 .text-content h2{
   text-align: left;
 }
@@ -150,5 +152,6 @@ This part is for all classes that are only theoretical content */
 .text-content div{
   margin-top: 1.25rem;
 }
+
 
 
